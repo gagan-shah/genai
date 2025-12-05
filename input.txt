@@ -1,0 +1,21 @@
+How you’d plug this into your system
+
+Replace the hard-coded VehicleETAInput in main() with:
+
+Current GPS from your tracking system.
+
+Destination from your shipment/route table.
+
+ETA from user or planning system.
+
+Call evaluate_eta() every X minutes (or when new GPS comes).
+
+If result.alert is True, send result.llm_explanation as:
+
+SMS / WhatsApp / email / dashboard notification.
+
+If you want, I can next:
+
+Wrap this into a FastAPI REST endpoint (POST /eta-check)
+
+Or extend it to consider historical average speed per route or driver instead of a fixed avg_speed_kmph
